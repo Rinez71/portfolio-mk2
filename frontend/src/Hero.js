@@ -1,9 +1,17 @@
 import React from 'react';
+import {ParticleBackground} from "./ParticleBackground";
+import {CenterTitle} from './CenterTitle';
+import './Hero.css'
+
 
 export const Hero = () => {
 	return (
 		<>
-			<h1>Hero</h1>
+			<div className='hero'>
+				<ParticleBackground />
+				<CenterTitle />
+			</div>
 		</>
 	);
 };
+
