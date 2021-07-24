@@ -8,7 +8,7 @@ export const Hero = () => {
 	return (
 		<>
 			<div className='hero'>
-				<ParticleBackground />
+				{/*<ParticleBackground />*/}
 				<CenterTitle />
 			</div>
 		</>
