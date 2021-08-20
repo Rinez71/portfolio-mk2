@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import { Navbar } from '../components/Navbar';
 
 import {
   Typography,
@@ -18,6 +19,7 @@ import {
   Button,
 } from '@material-ui/core';
 import { Business } from '@material-ui/icons';
+import WorkIcon from '@material-ui/icons/Work';
 
 const Home: NextPage = () => {
   return (
@@ -28,33 +30,38 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
-      <AppBar position='relative' className={styles.navbar}>
-        <Toolbar>
-          <Business />
-          <Typography className={styles.title} variant='h6' color='textPrimary'>
-            Robert Inez
-          </Typography>
-          <Button>Link1</Button>
-          <Button>Link2</Button>
-        </Toolbar>
-      </AppBar>
+      <Navbar />
       <div className={styles.container}>
         <main className={styles.main}>
           <Grid
             container
-            justify='space-between'
+            justifyContent='center'
             alignItems='center'
-            spacing={3}
+            spacing={6}
             md={12}
             direction='column'
           >
             <Grid item md={6}>
-              <Typography variant='h2'>Robert Inez</Typography>
+              <Typography
+                variant='h1'
+                align='center'
+                gutterBottom
+                className={styles.title}
+              >
+                Robert Inez
+              </Typography>
+              <Typography variant='h6' align='center'>
+                Fullstack Web Developer skilled in React, JS, TS, HTML, CSS
+              </Typography>
             </Grid>
             <Grid item md={6}>
-              <Button variant='contained'>Click Me</Button>
+              <Button variant='contained' size='large' color='primary'>
+                <WorkIcon className={styles.icon} />
+                See my work
+              </Button>
             </Grid>
           </Grid>
+          
         </main>
 
         <footer className={styles.footer}>
