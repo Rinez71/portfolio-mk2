@@ -17,8 +17,10 @@ export const Navbar = () => {
             Robert Inez
           </Typography>
           <div className={styles.navlinks}>
-            <Button>Link1</Button>
-            <Button>Link2</Button>
+            <Button>About Me</Button>
+            <Button>Portfolio</Button>
+            <Button>Experience</Button>
+            <Button>Contact Me</Button>
           </div>
         </Toolbar>
       </AppBar>

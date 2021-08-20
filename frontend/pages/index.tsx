@@ -17,9 +17,12 @@ import {
   Container,
   Drawer,
   Button,
+  Box,
+  Paper,
 } from '@material-ui/core';
 import { Business } from '@material-ui/icons';
 import WorkIcon from '@material-ui/icons/Work';
+import Typewriter from 'typewriter-effect';
 
 const Home: NextPage = () => {
   return (
@@ -35,7 +38,7 @@ const Home: NextPage = () => {
         <main className={styles.main}>
           <Grid
             container
-            justifyContent='center'
+            justify='center'
             alignItems='center'
             spacing={6}
             md={12}
@@ -45,23 +48,30 @@ const Home: NextPage = () => {
               <Typography
                 variant='h1'
                 align='center'
-                gutterBottom
                 className={styles.title}
+                gutterBottom
               >
                 Robert Inez
               </Typography>
-              <Typography variant='h6' align='center'>
-                Fullstack Web Developer skilled in React, JS, TS, HTML, CSS
+              <Typography variant='h4' align='center' gutterBottom>
+                Fullstack Web Developer skilled in: <Typewriter
+                options={{
+                  strings: ['ReactJS', 'ExpressJS', 'MySQL', 'NodeJS', 'and much more!'  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
               </Typography>
             </Grid>
             <Grid item md={6}>
-              <Button variant='contained' size='large' color='primary'>
-                <WorkIcon className={styles.icon} />
-                See my work
-              </Button>
+              <Box display='flex' justifyContent='center' alignItems='center'>
+                <Button variant='contained' size='large' color='primary'>
+                  <WorkIcon className={styles.icon} />
+                  See my work
+                </Button>
+              </Box>
             </Grid>
           </Grid>
-          
         </main>
 
         <footer className={styles.footer}>
