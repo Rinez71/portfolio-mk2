@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from '../styles/Nav.module.css';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -25,8 +26,11 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import PersonIcon from '@material-ui/icons/Person';
+import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
+import HourglassFullIcon from '@material-ui/icons/HourglassFull';
+import EmailIcon from '@material-ui/icons/Email';
 
 import Logo from '../public/images/Logo.png';
 
@@ -42,8 +46,6 @@ const useStyles = makeStyles((theme: Theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      background: '#e5f1f3',
-      color: '#000'
     },
     appBarShift: {
       width: `calc(100% - ${drawerWidth}px)`,
@@ -105,27 +107,40 @@ export const Navbar = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const menuItems = [
+    {
+      text: 'Home',
+      icon: <HomeIcon />,
+      path: '/',
+    },
+    {
+      text: 'About',
+      icon: <PersonIcon />,
+      path: '/about',
+    },
+    {
+      text: 'Projects',
+      icon: <BusinessCenterIcon />,
+      path: '/projects',
+    },
+    {
+      text: 'Experience',
+      icon: <HourglassFullIcon />,
+      path: '/experience',
+    },
+    {
+      text: 'Contact',
+      icon: <EmailIcon />,
+      path: '/contact',
+    },
+  ];
+
   return (
     <>
-      {/* <AppBar position='relative' className={styles.navbar}>
-        <Toolbar>
-          <Image src={Logo} alt='Logo' width='50' height='50' />
-          <Typography
-            className={styles.navtitle}
-            variant='h6'
-            color='textPrimary'
-          >
-            Robert Inez
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer variant='persistent' anchor='left'>
-        <div className={classes.drawer}>
-          <Typography variant='h5'>Robert Inez</Typography>
-        </div>
-      </Drawer> */}
       <CssBaseline />
       <AppBar
+        color='transparent'
         position='fixed'
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
@@ -141,7 +156,7 @@ export const Navbar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' noWrap>
+          <Typography style={{ fontWeight: 600 }} variant='h6' noWrap>
             Robert Inez{' '}
           </Typography>
         </Toolbar>
@@ -166,23 +181,12 @@ export const Navbar = () => {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+          {menuItems.map((item) => (
+            <ListItem button key={item.text}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <Link href={item.path}>
+                <ListItemText primary={item.text} />
+              </Link>
             </ListItem>
           ))}
         </List>

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { Navbar } from '../components/Navigation/Navbar';
-import {Footer} from '../components/Footer/Footer'
+import { Footer } from '../components/Footer/Footer';
 import {
   Typography,
   AppBar,
@@ -38,10 +38,9 @@ const Home: NextPage = () => {
         <main className={styles.main}>
           <Grid
             container
-            justify='center'
+            justifyContent='center'
             alignItems='center'
             spacing={6}
-            md={12}
             direction='row'
           >
             <Grid item md={12}>
@@ -85,7 +84,7 @@ const Home: NextPage = () => {
             </Grid>
           </Grid>
         </main>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
