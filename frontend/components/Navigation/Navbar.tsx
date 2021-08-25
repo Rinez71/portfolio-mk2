@@ -184,7 +184,7 @@ export const Navbar = () => {
           {menuItems.map((item) => (
             <ListItem button key={item.text}>
               <ListItemIcon>{item.icon}</ListItemIcon>
-              <Link href={item.path}>
+              <Link href={item.path} passHref>
                 <ListItemText primary={item.text} />
               </Link>
             </ListItem>
