@@ -5,11 +5,17 @@ import { Footer } from '../components/Footer/Footer';
 import { Navbar } from '../components/Navigation/Navbar';
 import styles from '../styles/Home.module.css';
 import Forest from '../public/images/forest-1.jpg';
-// Import Swiper React components
+import Penny from '../public/images/penny.png';
+import Me from '../public/images/about-me.jpg';
+import Millie from '../public/images/millie.png';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
-// Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/navigation';
+// import Swiper core and required modules
+import SwiperCore, { Autoplay, Navigation } from 'swiper';
+
+SwiperCore.use([Autoplay, Navigation]);
 
 const about: NextPage = () => {
   return (
@@ -57,28 +63,32 @@ const about: NextPage = () => {
             </Grid>
             <Grid item md={3}>
               <Swiper
-                modules={[Autoplay]}
+                spaceBetween={30}
+                centeredSlides={true}
                 autoplay={{
                   delay: 2500,
                   disableOnInteraction: false,
                 }}
+                navigation={true}
                 loop={true}
-                spaceBetween={30}
                 slidesPerView={'auto'}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
               >
                 <SwiperSlide>
-                  slide 1{/* <Image src={Forest} alt='logo' /> */}
+                  <Image src={Me} alt='Photo of Robert' />
                 </SwiperSlide>
                 <SwiperSlide>
-                  slide 2{/* <Image src={Forest} alt='logo' /> */}
+                  <Image
+                    src={Penny}
+                    alt="Photo of one of Robert's dogs Penny"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  slide 3{/* <Image src={Forest} alt='logo' /> */}
-                </SwiperSlide>
-                <SwiperSlide>
-                  slide 4{/* <Image src={Forest} alt='logo' /> */}
+                  <Image
+                    src={Millie}
+                    alt="Photo of one of Robert's dogs Penny"
+                  />
                 </SwiperSlide>
               </Swiper>
             </Grid>
