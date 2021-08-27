@@ -46,7 +46,7 @@ const about: NextPage = () => {
                 Spending 4 years in the Marine Corps I have developed
                 indispensable traits and a great work ethic. I strive to live
                 with a growth mindset knowing that I can always learn something
-                new and always improve my abilities.
+                new and always improve my abilities. test
               </Typography>
               <Typography variant='body1' align='center'>
                 {' '}
@@ -57,11 +57,11 @@ const about: NextPage = () => {
             </Grid>
             <Grid item md={3}>
               <Swiper
-              modules={[Autoplay]}
-              autoplay={{
-                "delay": 2500,
-                "disableOnInteraction": false
-              }}
+                modules={[Autoplay]}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
                 loop={true}
                 spaceBetween={30}
                 slidesPerView={'auto'}
@@ -69,7 +69,7 @@ const about: NextPage = () => {
                 onSwiper={(swiper) => console.log(swiper)}
               >
                 <SwiperSlide>
-                slide 1{/* <Image src={Forest} alt='logo' /> */}
+                  slide 1{/* <Image src={Forest} alt='logo' /> */}
                 </SwiperSlide>
                 <SwiperSlide>
                   slide 2{/* <Image src={Forest} alt='logo' /> */}
