@@ -6,19 +6,10 @@ import { Navbar } from '../components/Navigation/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import {
   Typography,
-  AppBar,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
   CssBaseline,
   Grid,
-  Toolbar,
-  Container,
-  Drawer,
   Button,
   Box,
-  Paper,
 } from '@material-ui/core';
 import { Business } from '@material-ui/icons';
 import WorkIcon from '@material-ui/icons/Work';
