@@ -46,7 +46,7 @@ const about: NextPage = () => {
                 Spending 4 years in the Marine Corps I have developed
                 indispensable traits and a great work ethic. I strive to live
                 with a growth mindset knowing that I can always learn something
-                new and always improve my abilities. test
+                new and always improve my abilities.
               </Typography>
               <Typography variant='body1' align='center'>
                 {' '}
