@@ -10,6 +10,7 @@ import {
   Grid,
   Button,
   Box,
+  Container,
 } from '@material-ui/core';
 import { Business } from '@material-ui/icons';
 import WorkIcon from '@material-ui/icons/Work';
@@ -27,53 +28,55 @@ const Home: NextPage = () => {
       <Navbar />
       <div className={styles.container}>
         <main className={styles.main}>
-          <Grid
-            container
-            justifyContent='center'
-            alignItems='center'
-            spacing={6}
-            direction='row'
-          >
-            <Grid item md={12}>
-              <Typography
-                variant='h1'
-                align='center'
-                className={styles.title}
-                gutterBottom
-              >
-                Robert Inez
-              </Typography>
-              <Typography variant='h4' align='center' gutterBottom>
-                Fullstack Web Developer skilled in:
-                <Typewriter
-                  options={{
-                    strings: [
-                      'ReactJS',
-                      'ExpressJS',
-                      'MySQL',
-                      'NodeJS',
-                      'and much more!',
-                    ],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </Typography>
-              <Typography>
-                <Box
-                  className={styles.button}
-                  display='flex'
-                  justifyContent='center'
-                  alignItems='center'
+          <Container>
+            <Grid
+              container
+              justifyContent='center'
+              alignItems='center'
+              spacing={6}
+              direction='row'
+            >
+              <Grid item md={12}>
+                <Typography
+                  variant='h1'
+                  align='center'
+                  className={styles.title}
+                  gutterBottom
                 >
-                  <Button variant='contained' size='large' color='primary'>
-                    <WorkIcon className={styles.icon} />
-                    See my work
-                  </Button>
-                </Box>
-              </Typography>
+                  Robert Inez
+                </Typography>
+                <Typography variant='h4' align='center' gutterBottom>
+                  Fullstack Web Developer skilled in:
+                  <Typewriter
+                    options={{
+                      strings: [
+                        'ReactJS',
+                        'ExpressJS',
+                        'MySQL',
+                        'NodeJS',
+                        'and much more!',
+                      ],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </Typography>
+                <Typography>
+                  <Box
+                    className={styles.button}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
+                  >
+                    <Button variant='contained' size='large' color='primary'>
+                      <WorkIcon className={styles.icon} />
+                      See my work
+                    </Button>
+                  </Box>
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
+          </Container>
         </main>
         <Footer />
       </div>

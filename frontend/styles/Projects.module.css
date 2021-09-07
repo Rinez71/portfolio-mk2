@@ -1,0 +1,37 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  background: url(../public/images/forestv2.jpg) center center/cover no-repeat;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.projectContainer {
+  padding: 5rem 10rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.projectItem {
+    padding: 1rem 3rem;
+}
+
+.projectHeader {
+    font-weight: bold;
+    text-decoration: underline;
+}

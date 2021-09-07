@@ -38,10 +38,12 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      display: 'flex',
-    },
+    // root: {
+    //   display: 'flex',
+    // },
     appBar: {
+      color: '#000',
+      backgroundColor: '#E5F1F3',
       transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -140,8 +142,7 @@ export const Navbar = () => {
     <>
       <CssBaseline />
       <AppBar
-        color='transparent'
-        position='fixed'
+        position='sticky'
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
@@ -182,12 +183,12 @@ export const Navbar = () => {
         <Divider />
         <List>
           {menuItems.map((item) => (
-            <ListItem button key={item.text}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <Link href={item.path} passHref>
+            <Link key={item.text} href={item.path} passHref>
+              <ListItem button>
+                <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
-              </Link>
-            </ListItem>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>
