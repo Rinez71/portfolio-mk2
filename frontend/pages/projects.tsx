@@ -5,14 +5,12 @@ import { Navbar } from '../components/Navigation/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from '../styles/Projects.module.css';
+import ProjectCard from '../components/Cards/ProjectCard';
 import Alien from '../public/images/AlienGram.png';
 import Ultuh from '../public/images/ultuh.png';
 
-const useStyles = makeStyles(() => ({
-  projects: {},
-}));
-
-const projects: NextPage = () => {
+const Projects: NextPage = () => {
+  // const classes = useStyles();
   return (
     <>
       <CssBaseline />
@@ -62,7 +60,16 @@ const projects: NextPage = () => {
               direction='row'
             >
               <Grid item xs={12} md={6}>
-                <Typography
+                <ProjectCard
+                  image='/images/AlienGram.png'
+                  title='AlienGram'
+                  description='AlienGram is an interactive social media web application for
+                  users to post, chat, like, and submit transmissions to other
+                  users posts. With this application we have enabled people of
+                  all walks of life to share their extraterrestrial experiences
+                  and see the most recent ET sightings on a map.'
+                />
+                {/* <Typography
                   variant='h4'
                   gutterBottom
                   className={styles.projectHeader}
@@ -83,6 +90,7 @@ const projects: NextPage = () => {
                   alt='Thumbnail of Ultuh'
                   layout='responsive'
                 />
+              </Grid> */}
               </Grid>
             </Grid>
           </Container>
@@ -93,4 +101,4 @@ const projects: NextPage = () => {
   );
 };
 
-export default projects;
+export default Projects;

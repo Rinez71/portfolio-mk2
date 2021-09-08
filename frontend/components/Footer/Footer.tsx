@@ -1,6 +1,25 @@
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import useStyles from './footerStyles';
+import { makeStyles } from '@material-ui/core/styles';
+
+// import useStyles from './footerStyles';
+
+const useStyles = makeStyles(() => ({
+  footer: {
+    width: '100%',
+    height: '100px',
+    borderTop: '1px solid #eaeaea',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  footerLink: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
+  },
+}));
 
 export const Footer = () => {
   const classes = useStyles()

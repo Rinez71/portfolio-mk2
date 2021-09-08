@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Typography, CssBaseline, Grid, Button, Box } from '@material-ui/core';
+import { Typography, CssBaseline, Grid, Button, Box, Container } from '@material-ui/core';
 import { Footer } from '../components/Footer/Footer';
 import { Navbar } from '../components/Navigation/Navbar';
 import styles from '../styles/Home.module.css';
@@ -17,13 +17,15 @@ import SwiperCore, { Autoplay, Navigation } from 'swiper';
 
 SwiperCore.use([Autoplay, Navigation]);
 
-const about: NextPage = () => {
+const About: NextPage = () => {
   return (
     <>
       <CssBaseline />
       <Navbar />
       <div className={styles.container}>
         <main className={styles.main}>
+          <Container>
+
           <Grid
             container
             justifyContent='center'
@@ -61,7 +63,7 @@ const about: NextPage = () => {
                 <span>&#8226;</span> Project Management{' '}
               </Typography>
             </Grid>
-            <Grid item md={3}>
+            <Grid item md={6}>
               <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -93,6 +95,7 @@ const about: NextPage = () => {
               </Swiper>
             </Grid>
           </Grid>
+          </Container>
         </main>
         <Footer />
       </div>
@@ -100,4 +103,4 @@ const about: NextPage = () => {
   );
 };
 
-export default about;
+export default About;
