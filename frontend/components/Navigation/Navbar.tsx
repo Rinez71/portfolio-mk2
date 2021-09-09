@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '../styles/Nav.module.css';
+import styles from '../../styles/Nav.module.css';
 import Image from 'next/image';
 import clsx from 'clsx';
 import {
@@ -42,8 +42,8 @@ const useStyles = makeStyles((theme: Theme) =>
     //   display: 'flex',
     // },
     appBar: {
-      color: '#000',
-      backgroundColor: '#E5F1F3',
+      // color: '#000',
+      // backgroundColor: '#E5F1F3',
       transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -143,7 +143,7 @@ export const Navbar = () => {
       <CssBaseline />
       <AppBar
         position='sticky'
-        className={clsx(classes.appBar, {
+        className={clsx(styles.navbar, classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >

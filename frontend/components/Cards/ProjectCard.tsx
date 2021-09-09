@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
@@ -19,7 +20,15 @@ const useStyles = makeStyles(() => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    border: '1px solid black',
+    borderRadius: '10px',
+    fontSize: '1.25rem',
+    '&:hover': {
+      // color: '#F64C72',
+      borderColor: ' #A4B0FF',
+    },
   },
+
   cardMedia: {
     height: 0,
     paddingTop: '56.25%',
@@ -30,21 +39,18 @@ const useStyles = makeStyles(() => ({
 }));
 
 interface Props {
-  image: string;
+  image: any;
   title: string;
   description: string;
+  alt: string;
 }
 
-const ProjectCard = ({ image, title, description }: Props) => {
+const ProjectCard = ({ image, title, description, alt }: Props) => {
   const classes = useStyles();
   return (
     <>
       <Card className={classes.card}>
-        <CardMedia
-          // component='img'
-          className={classes.cardMedia}
-          image={image}
-        />
+        <Image src={image} alt={alt} layout='responsive' />
         <CardContent className={classes.cardContent}>
           <Typography gutterBottom variant='h5'>
             {title}
