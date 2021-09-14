@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -142,7 +142,7 @@ export const Navbar = () => {
     <>
       <CssBaseline />
       <AppBar
-        position='sticky'
+        position='relative'
         className={clsx(styles.navbar, classes.appBar, {
           [classes.appBarShift]: open,
         })}

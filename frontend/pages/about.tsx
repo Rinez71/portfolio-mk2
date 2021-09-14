@@ -1,37 +1,23 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
-import {
-  Typography,
-  CssBaseline,
-  Grid,
-  Button,
-  Box,
-  Container,
-} from '@material-ui/core';
-import { Footer } from '../components/Footer/Footer';
-import { Navbar } from '../components/Navigation/Navbar';
-import styles from '../styles/Background.module.css';
-import Forest from '../public/images/forest-1.jpg';
-import Penny from '../public/images/penny.png';
-import Me from '../public/images/about-me.jpg';
-import Millie from '../public/images/millie.png';
+import { Typography, CssBaseline, Grid, Container } from '@material-ui/core';
+import Layout from '../components/Layout/Layout';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-// import Swiper core and required modules
-import SwiperCore, { Autoplay, Navigation } from 'swiper';
-
-SwiperCore.use([Autoplay, Navigation]);
+const useStyles = makeStyles((theme) => ({
+  container: {
+    padding: '10rem 0',
+    height: 'auto',
+  },
+}));
 
 const About: NextPage = () => {
+  const classes = useStyles();
   return (
     <>
       <CssBaseline />
-      <Navbar />
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <Container>
+      <Layout header='About'>
+        <main>
+          <Container className={classes.container}>
             <Grid
               container
               justifyContent='center'
@@ -69,42 +55,11 @@ const About: NextPage = () => {
                   <span>&#8226;</span> Project Management{' '}
                 </Typography>
               </Grid>
-              <Grid item md={6}>
-                <Swiper
-                  spaceBetween={30}
-                  centeredSlides={true}
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                  navigation={true}
-                  loop={true}
-                  slidesPerView={'auto'}
-                  onSlideChange={() => console.log('slide change')}
-                  onSwiper={(swiper) => console.log(swiper)}
-                >
-                  <SwiperSlide>
-                    <Image src={Me} alt='Photo of Robert' />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src={Penny}
-                      alt="Photo of one of Robert's dogs Penny"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src={Millie}
-                      alt="Photo of one of Robert's dogs Penny"
-                    />
-                  </SwiperSlide>
-                </Swiper>
-              </Grid>
+              <Grid item md={6}></Grid>
             </Grid>
           </Container>
         </main>
-        <Footer />
-      </div>
+      </Layout>
     </>
   );
 };

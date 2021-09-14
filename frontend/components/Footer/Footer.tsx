@@ -4,16 +4,16 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // import useStyles from './footerStyles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   footer: {
     width: '100%',
     height: '100px',
-    // borderTop: '1px solid #eaeaea',
-    // borderTop: '1px solid #a1c9d7',
+    backgroundColor: '#C0C4C8',
+    padding: '2rem 0',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '20px',
+    // marginTop: '20px',
   },
   footerLink: {
     display: 'flex',
@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   const classes = useStyles();
   return (
     <>

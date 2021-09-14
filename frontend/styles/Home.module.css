@@ -5,13 +5,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   position: relative;
 }
 
 .container::before {
   content: '';
   background: url(../public/images/forestv2.jpg) center center/cover no-repeat;
+  background-attachment: fixed;
   opacity: 0.25;
   top: 0;
   left: 0;
@@ -32,6 +33,11 @@
 
 .box {
   padding: 1rem 0;
+}
+
+.navbar {
+  background-color: #e5f1f3 !important;
+  color: #000 !important;
 }
 
 .icon {
