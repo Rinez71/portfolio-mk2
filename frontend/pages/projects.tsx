@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: '4rem',
   },
+  background: {
+    backgroundColor: '#E3E3E3'
+  }
 }));
 
 const cards = [
@@ -55,7 +58,7 @@ const Projects: NextPage = () => {
     <>
       <CssBaseline />
       <Layout header='Projects'>
-        <main>
+        <main className={classes.background}>
           <Container className={classes.cardGrid} maxWidth='md'>
             <Grid container spacing={2}>
               {cards.map((card, index) => {

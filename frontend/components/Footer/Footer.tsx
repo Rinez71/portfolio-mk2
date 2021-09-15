@@ -8,14 +8,15 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     width: '100%',
     height: '100px',
-    backgroundColor: '#C0C4C8',
-    padding: '2rem 0',
+    backgroundColor: '#162635',
+    padding: '1rem 0',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     // marginTop: '20px',
   },
   footerLink: {
+    color: '#fff',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

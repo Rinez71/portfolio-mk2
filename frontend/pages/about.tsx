@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     padding: '10rem 0',
     height: 'auto',
   },
+  background: {
+    backgroundColor: '#E3E3E3',
+  },
 }));
 
 const About: NextPage = () => {
@@ -16,7 +19,7 @@ const About: NextPage = () => {
     <>
       <CssBaseline />
       <Layout header='About'>
-        <main>
+        <main className={classes.background}>
           <Container className={classes.container}>
             <Grid
               container
