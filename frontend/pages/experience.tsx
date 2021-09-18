@@ -1,42 +1,33 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import React from 'react';
 import type { NextPage } from 'next';
-import { Typography, CssBaseline, Grid, Container } from '@material-ui/core';
-import Layout from '../components/Layout/Layout';
+import { CssBaseline, Grid, Container } from '@mui/material';
+import Header from '../components/Layout/Header';
 import Timeline from '../components/Timeline/Timeline';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    padding: '10rem 0',
-    height: 'auto',
-  },
-  background: {
-    backgroundColor: '#E3E3E3'
-  }
-}));
+import { container, background } from './about';
 
 const Experience: NextPage = () => {
-  const classes = useStyles();
   return (
     <>
-      <CssBaseline/>
-      <Layout header='Experience'>
-        <main className={classes.background}>
-          <Container className={classes.container}>
-            <Grid
-              container
-              justifyContent='center'
-              alignItems='center'
-              spacing={6}
-              direction='row'
-            >
-              <Grid item md={12}>
-                <Timeline />
-              </Grid>
+      <CssBaseline />
+      <Header header='Experience'/>
+      <main css={background}>
+        <Container css={container}>
+          <Grid
+            container
+            justifyContent='center'
+            alignItems='center'
+            spacing={6}
+            direction='row'
+          >
+            <Grid item md={12}>
+              <Timeline />
             </Grid>
-          </Container>
-        </main>
-      </Layout>
+          </Grid>
+        </Container>
+      </main>
     </>
   );
 };

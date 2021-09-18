@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React from 'react';
 import {
   CssBaseline,
@@ -5,25 +9,21 @@ import {
   Typography,
   Container,
   Button,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+} from '@mui/material';
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-}));
+const container = css({
+  backgroundColor: '#fff',
+  padding: '3rem 0',
+});
 
 interface HeaderProps {
   header: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ header }) => {
-  const classes = useStyles();
+const Header: React.FC<HeaderProps> = ({ header }) => {
   return (
     <>
-      <div className={classes.container}>
+      <div css={container}>
         <Container maxWidth='sm'>
           <Typography
             variant='h2'
@@ -38,3 +38,5 @@ export const Header: React.FC<HeaderProps> = ({ header }) => {
     </>
   );
 };
+
+export default Header;

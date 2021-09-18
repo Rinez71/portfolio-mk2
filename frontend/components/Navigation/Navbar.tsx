@@ -1,104 +1,70 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
 import React from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Nav.module.css';
-import Image from 'next/image';
-import clsx from 'clsx';
 import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
   Drawer,
   CssBaseline,
-  IconButton,
-  Divider,
+  Toolbar,
   List,
   ListItem,
+  Divider,
+  IconButton,
   ListItemIcon,
   ListItemText,
-} from '@material-ui/core';
+  Typography,
+  FilledTextFieldProps,
+} from '@mui/material';
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import { useTheme, styled } from '@mui/material/styles';
 import {
-  makeStyles,
-  useTheme,
-  Theme,
-  createStyles,
-} from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import HomeIcon from '@material-ui/icons/Home';
-import PersonIcon from '@material-ui/icons/Person';
-import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
-import HourglassFullIcon from '@material-ui/icons/HourglassFull';
-import EmailIcon from '@material-ui/icons/Email';
-
-import Logo from '../public/images/Logo.png';
+  Menu,
+  ChevronLeft,
+  ChevronRight,
+  Home,
+  Person,
+  BusinessCenter,
+  HourglassFull,
+  Email,
+} from '@mui/icons-material';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    // root: {
-    //   display: 'flex',
-    // },
-    appBar: {
-      // color: '#000',
-      // backgroundColor: '#E5F1F3',
-      transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-    },
-    appBarShift: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-      transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    hide: {
-      display: 'none',
-    },
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    drawerHeader: {
-      display: 'flex',
-      alignItems: 'center',
-      padding: theme.spacing(0, 1),
-      // necessary for content to be below app bar
-      ...theme.mixins.toolbar,
-      justifyContent: 'flex-end',
-    },
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      marginLeft: -drawerWidth,
-    },
-    contentShift: {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 0,
-    },
-  })
-);
+interface AppBarProps extends MuiAppBarProps {
+  open?: boolean;
+}
+
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})<AppBarProps>(({ theme, open }) => ({
+  transition: theme.transitions.create(['margin', 'width'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: `${drawerWidth}px`,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}));
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+}));
+
+interface NavbarProps {}
 
 export const Navbar: React.FC = () => {
-  const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -113,27 +79,27 @@ export const Navbar: React.FC = () => {
   const menuItems = [
     {
       text: 'Home',
-      icon: <HomeIcon />,
+      icon: <Home />,
       path: '/',
     },
     {
       text: 'About',
-      icon: <PersonIcon />,
+      icon: <Person />,
       path: '/about',
     },
     {
       text: 'Projects',
-      icon: <BusinessCenterIcon />,
+      icon: <BusinessCenter />,
       path: '/projects',
     },
     {
       text: 'Experience',
-      icon: <HourglassFullIcon />,
+      icon: <HourglassFull />,
       path: '/experience',
     },
     {
       text: 'Contact',
-      icon: <EmailIcon />,
+      icon: <Email />,
       path: '/contact',
     },
   ];
@@ -141,45 +107,40 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <CssBaseline />
-      <AppBar
-        position='relative'
-        className={clsx(styles.navbar, classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
+      <AppBar position='relative' open={open} className={styles.navbar}>
         <Toolbar>
           <IconButton
             color='inherit'
             aria-label='open drawer'
             onClick={handleDrawerOpen}
             edge='start'
-            className={clsx(classes.menuButton, open && classes.hide)}
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
-            <MenuIcon />
+            <Menu />
           </IconButton>
-          <Typography style={{ fontWeight: 600 }} variant='h6' noWrap>
-            Robert Inez{' '}
+          <Typography variant='h6' noWrap component='div'>
+            Robert Inez
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
-        className={classes.drawer}
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
         variant='persistent'
         anchor='left'
         open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
       >
-        <div className={classes.drawerHeader}>
+        <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
+            {theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
           </IconButton>
-        </div>
+        </DrawerHeader>
         <Divider />
         <List>
           {menuItems.map((item) => (
@@ -191,6 +152,7 @@ export const Navbar: React.FC = () => {
             </Link>
           ))}
         </List>
+        <Divider />
       </Drawer>
     </>
   );

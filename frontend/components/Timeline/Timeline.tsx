@@ -4,29 +4,18 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import WorkIcon from '@material-ui/icons/Work';
-import SchoolIcon from '@material-ui/icons/School';
-import StarIcon from '@material-ui/icons/Star';
-import { makeStyles } from '@material-ui/styles';
-
-const useStyles = makeStyles((theme) => ({
-  line: {
-    color: '#000',
-  },
-
-}));
+import { Work, School, Star } from '@mui/icons-material';
 
 const Timeline = () => {
-  const classes = useStyles();
   return (
     <>
-      <VerticalTimeline className={classes.line}>
+      <VerticalTimeline>
         {/* RSI */}
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='August 2021 - Present'
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-          icon={<WorkIcon />}
+          icon={<Work />}
         >
           <h3 className='vertical-timeline-element-title'>
             Junior Web Consultant
@@ -41,7 +30,7 @@ const Timeline = () => {
           className='vertical-timeline-element--education'
           date='April 2021 - June 2021'
           iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-          icon={<SchoolIcon />}
+          icon={<School />}
         >
           <h3 className='vertical-timeline-element-title'>
             Fullstack Web Development Intern
@@ -56,7 +45,7 @@ const Timeline = () => {
           className='vertical-timeline-element--education'
           date='January 2021'
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-          icon={<WorkIcon />}
+          icon={<Work />}
         >
           <h3 className='vertical-timeline-element-title'>
             Courier/Delivery Driver
@@ -69,7 +58,7 @@ const Timeline = () => {
           className='vertical-timeline-element--education'
           date='Jan 2017 - Jan 2021'
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-          icon={<WorkIcon />}
+          icon={<Work />}
         >
           <h3 className='vertical-timeline-element-title'>
             Quality Control Specialist
@@ -83,7 +72,7 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-          icon={<StarIcon />}
+          icon={<Star />}
         />
       </VerticalTimeline>
     </>

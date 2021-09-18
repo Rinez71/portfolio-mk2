@@ -1,26 +1,28 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+import React from 'react';
 import type { NextPage } from 'next';
-import { Typography, CssBaseline, Grid, Container } from '@material-ui/core';
-import Layout from '../components/Layout/Layout';
-import { makeStyles } from '@material-ui/core/styles';
+import { Typography, CssBaseline, Grid, Container } from '@mui/material';
+import ImageMasonry from '../components/Masonry/ImageMasonry';
+import Header from '../components/Layout/Header';
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    padding: '10rem 0',
-    height: 'auto',
-  },
-  background: {
-    backgroundColor: '#E3E3E3',
-  },
-}));
+export const container = css({
+  padding: '10rem 0',
+  height: 'auto',
+});
+
+export const background = css({
+  backgroundColor: '#E3E3E3',
+});
 
 const About: NextPage = () => {
-  const classes = useStyles();
   return (
     <>
       <CssBaseline />
-      <Layout header='About'>
-        <main className={classes.background}>
-          <Container className={classes.container}>
+      <Header header='About'/>
+        <main css={background}>
+          <Container css={container}>
             <Grid
               container
               justifyContent='center'
@@ -58,11 +60,12 @@ const About: NextPage = () => {
                   <span>&#8226;</span> Project Management{' '}
                 </Typography>
               </Grid>
-              <Grid item md={6}></Grid>
+              <Grid item md={6}>
+                <ImageMasonry />
+              </Grid>
             </Grid>
           </Container>
         </main>
-      </Layout>
     </>
   );
 };

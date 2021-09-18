@@ -1,31 +1,30 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Card,
   CardActions,
   CardContent,
-  CardMedia,
   Button,
-} from '@material-ui/core';
+} from '@mui/material';
 
-import Alien from '../../public/images/AlienGram.png';
 
-const useStyles = makeStyles(() => ({
-  card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  cardMedia: {
-    paddingTop: '56.25%',
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-}));
+const card = css({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const cardMedia = css({
+  paddingTop: '56.25%',
+});
+
+const cardContent = css({
+  flexGrow: 1,
+});
 
 interface CardProps {
   image: any;
@@ -44,17 +43,11 @@ const ProjectCard: React.FC<CardProps> = ({
   demoLink,
   githubLink,
 }) => {
-  const classes = useStyles();
   return (
     <>
-      <Card className={classes.card}>
-        <Image
-          className={classes.cardMedia}
-          src={image}
-          alt={alt}
-          layout='responsive'
-        />
-        <CardContent className={classes.cardContent}>
+      <Card css={card}>
+        <Image css={cardMedia} src={image} alt={alt} layout='responsive' />
+        <CardContent css={cardContent}>
           <Typography gutterBottom variant='h5'>
             {title}
           </Typography>
