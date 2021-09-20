@@ -2,9 +2,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { css, jsx } from '@emotion/react';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import { makeStyles } from '@material-ui/core/styles';
+import { LinkedIn, GitHub } from '@mui/icons-material';
 
 const footer = css({
   width: '100%',
@@ -34,7 +32,7 @@ const Footer: React.FC = () => {
           rel='noopener noreferrer'
           css={footerLink}
         >
-          <LinkedInIcon fontSize='large' />
+          <LinkedIn fontSize='large' />
         </a>
         <a
           href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
@@ -42,7 +40,7 @@ const Footer: React.FC = () => {
           rel='noopener noreferrer'
           css={footerLink}
         >
-          <GitHubIcon fontSize='large' />
+          <GitHub fontSize='large' />
         </a>
       </footer>
     </>

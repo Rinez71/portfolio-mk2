@@ -29,6 +29,7 @@ import {
   HourglassFull,
   Email,
 } from '@mui/icons-material';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 
 const drawerWidth = 240;
 
@@ -107,22 +108,24 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <CssBaseline />
-      <AppBar position='relative' open={open} className={styles.navbar}>
-        <Toolbar>
-          <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            onClick={handleDrawerOpen}
-            edge='start'
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <Menu />
-          </IconButton>
-          <Typography variant='h6' noWrap component='div'>
-            Robert Inez
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <ClickAwayListener onClickAway={handleDrawerClose}>
+        <AppBar position='relative' open={open} className={styles.navbar}>
+          <Toolbar>
+            <IconButton
+              color='inherit'
+              aria-label='open drawer'
+              onClick={handleDrawerOpen}
+              edge='start'
+              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            >
+              <Menu />
+            </IconButton>
+            <Typography variant='h6' noWrap component='div'>
+              Robert Inez
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </ClickAwayListener>
       <Drawer
         sx={{
           width: drawerWidth,
