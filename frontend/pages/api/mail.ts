@@ -2,17 +2,26 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
+// import { check } from 'express-validator';
+import validator from 'validator';
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const body = JSON.parse(req.body);
 
+  const cleanName = validator.escape(body.fullName).trim();
+  const cleanEmail = validator.isEmail(body.email);
+  const cleanSubject = validator.escape(body.subject).trim();
+  const cleanMessage = validator.escape(body.message).trim();
+
+  console.log(cleanName, cleanEmail, cleanSubject, cleanMessage);
+
   const message = `
-    Name: ${body.fullName}\r\n
-    Email: ${body.email}\r\n
-    Subject: ${body.subject}\r\n
-    Message: ${body.message}
+    Name: ${cleanName}\r\n
+    Email: ${cleanEmail}\r\n
+    Subject: ${cleanSubject}\r\n
+    Message: ${cleanMessage}
   `;
 
   const data = {
