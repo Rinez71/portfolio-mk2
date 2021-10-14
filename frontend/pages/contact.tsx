@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
+import { useRef } from 'react';
 import {
   Container,
   CssBaseline,
   Grid,
-  Typography,
   TextField,
   Paper,
   Button,
@@ -16,20 +16,14 @@ import Header from '../components/Layout/Header';
 import { background, container } from './about';
 import * as Yup from 'yup';
 import ReCAPTCHA from 'react-google-recaptcha';
-import {
-  Formik,
-  FormikHelpers,
-  FormikProps,
-  Form,
-  Field,
-  FieldProps,
-} from 'formik';
+import { Formik, Form, Field } from 'formik';
 
 interface ContactForm {
   fullName: string;
   email: string;
   subject: string;
   message: string;
+  token: string;
 }
 
 const initialValues: ContactForm = {
@@ -37,14 +31,33 @@ const initialValues: ContactForm = {
   email: '',
   subject: '',
   message: '',
+  token: '',
 };
 
 const Contact: React.FC = () => {
+  const reRef = useRef<ReCAPTCHA>();
   const handleSubmit = async (values: any) => {
-    fetch('/api/mail', {
+    const token = await reRef.current?.executeAsync();
+    reRef.current.reset();
+    // console.log(token);
+
+    const response = await fetch('/api/mail', {
       method: 'POST',
-      body: JSON.stringify(values),
+      body: JSON.stringify({
+        fullName: values.fullName,
+        email: values.email,
+        subject: values.subject,
+        message: values.message,
+        token,
+      }),
     });
+    if (response.status === 200) {
+      alert(
+        'Email sent successfully. I will respond to your inquiry as soon as possible.'
+      );
+    } else {
+      alert('Oops! Unable to send email with email sender');
+    }
   };
 
   const validator = Yup.object().shape({
@@ -80,9 +93,6 @@ const Contact: React.FC = () => {
                 <Formik
                   initialValues={initialValues}
                   onSubmit={handleSubmit}
-                  // onSubmit={(values) => {
-                  //   console.log(JSON.stringify(values));
-                  // }}
                   validationSchema={validator}
                 >
                   {({ values }) => (
@@ -126,10 +136,11 @@ const Contact: React.FC = () => {
                         maxRows={6}
                         fullWidth
                       />
-                      <pre>{JSON.stringify(values, null, 4)}</pre>
+                      {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
                       <ReCAPTCHA
-                        size='normal'
-                        sitekey='6Ldy_dcaAAAAAIguzD0JWmx6z61FIBUJ3LX0Ro_o'
+                        ref={reRef}
+                        size='invisible'
+                        sitekey='6LeJxrocAAAAAFN_MAE9U-wSKSPOsz0v_ND6nhym'
                       />
                       <Button type='submit'>Submit</Button>
                     </Form>
