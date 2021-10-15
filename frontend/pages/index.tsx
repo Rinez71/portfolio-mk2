@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, css, CSSObject } from '@emotion/react';
 import React from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
@@ -17,6 +17,33 @@ import {
 import { Work } from '@mui/icons-material';
 import Typewriter from 'typewriter-effect';
 
+const title: CSSObject = {
+  margin: '0',
+  lineHeight: '1.15',
+  fontSize: '4rem',
+  opacity: 1,
+  color: 'hsl(60, 30%, 96%)',
+};
+
+const main: CSSObject = {
+  padding: '5rem, 0',
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
+const description: CSSObject = {
+  lineHeight: '1.5',
+  fontSize: '1.5rem',
+  color: '#f8f8f2',
+};
+
+const icon: CSSObject = {
+  marginRight: '1rem',
+};
+
 const Home: NextPage = () => {
   return (
     <>
@@ -27,7 +54,7 @@ const Home: NextPage = () => {
       </Head>
       <CssBaseline />
       <main className={styles.container}>
-        <Container className={styles.main}>
+        <Container css={main}>
           <Grid
             container
             justifyContent='center'
@@ -36,16 +63,11 @@ const Home: NextPage = () => {
             direction='row'
           >
             <Grid item md={12}>
-              <Typography
-                variant='h1'
-                align='center'
-                className={styles.title}
-                gutterBottom
-              >
+              <Typography variant='h1' align='center' css={title} gutterBottom>
                 Robert Inez
               </Typography>
               <Typography
-                className={styles.description}
+                css={description}
                 variant='h4'
                 align='center'
                 gutterBottom
@@ -54,8 +76,9 @@ const Home: NextPage = () => {
                 <Typewriter
                   options={{
                     strings: [
-                      'ReactJS',
-                      'ExpressJS',
+                      'React',
+                      'Javascript',
+                      'Typescript',
                       'MySQL',
                       'NodeJS',
                       'and much more!',
@@ -66,15 +89,10 @@ const Home: NextPage = () => {
                 />
               </Typography>
               <Typography>
-                <Box
-                  className={styles.button}
-                  display='flex'
-                  justifyContent='center'
-                  alignItems='center'
-                >
-                  <Link href='/experience' passHref>
+                <Box display='flex' justifyContent='center' alignItems='center'>
+                  <Link href='/projects' passHref>
                     <Button variant='contained' size='large' color='secondary'>
-                      <Work className={styles.icon} />
+                      <Work css={icon} />
                       See my work
                     </Button>
                   </Link>

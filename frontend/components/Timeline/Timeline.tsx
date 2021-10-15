@@ -1,3 +1,6 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
 import React from 'react';
 import {
   VerticalTimeline,
@@ -6,15 +9,16 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import { Work, School, Star } from '@mui/icons-material';
 
-const Timeline = () => {
+const Timeline: React.FC = () => {
   return (
     <>
       <VerticalTimeline>
-        {/* RSI */}
+        {/*-------------------------------------------RSI------------------------------------------------- */}
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='August 2021 - Present'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ color: '#f8f8f2', backgroundColor: '#44475a' }}
+          iconStyle={{ background: 'hsl(191, 97%, 77%)', color: '#fff' }}
           icon={<Work />}
         >
           <h3 className='vertical-timeline-element-title'>
@@ -25,11 +29,12 @@ const Timeline = () => {
           </h4>
           <p>Web Design, UX/UI, Communication </p>
         </VerticalTimelineElement>
-        {/* DeepDive */}
+        {/*-----------------------------------------DeepDive------------------------------------------------ */}
         <VerticalTimelineElement
           className='vertical-timeline-element--education'
           date='April 2021 - June 2021'
-          iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+          contentStyle={{ color: '#f8f8f2', backgroundColor: '#44475a' }}
+          iconStyle={{ background: 'hsl(0, 100%, 67%)', color: '#fff' }}
           icon={<School />}
         >
           <h3 className='vertical-timeline-element-title'>
@@ -44,7 +49,8 @@ const Timeline = () => {
         <VerticalTimelineElement
           className='vertical-timeline-element--education'
           date='January 2021'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ color: '#f8f8f2', backgroundColor: '#44475a' }}
+          iconStyle={{ background: 'hsl(191, 97%, 77%)', color: '#fff' }}
           icon={<Work />}
         >
           <h3 className='vertical-timeline-element-title'>
@@ -57,7 +63,8 @@ const Timeline = () => {
         <VerticalTimelineElement
           className='vertical-timeline-element--education'
           date='Jan 2017 - Jan 2021'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ color: '#f8f8f2', backgroundColor: '#44475a' }}
+          iconStyle={{ background: 'hsl(191, 97%, 77%)', color: '#fff' }}
           icon={<Work />}
         >
           <h3 className='vertical-timeline-element-title'>
@@ -71,7 +78,7 @@ const Timeline = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+          iconStyle={{ background: 'hsl(135, 94%, 65%)', color: '#fff' }}
           icon={<Star />}
         />
       </VerticalTimeline>

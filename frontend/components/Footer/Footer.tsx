@@ -6,16 +6,17 @@ import { LinkedIn, GitHub } from '@mui/icons-material';
 
 const footer = css({
   width: '100%',
-  height: '100px',
-  backgroundColor: '#162635',
-  padding: '1rem 0',
+  // height: '100px',
+  backgroundColor: '#44475a',
+  padding: '2rem 0',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  position: 'absolute',
 });
 
 const footerLink = css({
-  color: '#fff',
+  color: '#f8f8f2',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

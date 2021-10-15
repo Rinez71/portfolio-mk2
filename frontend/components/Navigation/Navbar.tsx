@@ -63,8 +63,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-interface NavbarProps {}
-
 export const Navbar: React.FC = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -109,14 +107,13 @@ export const Navbar: React.FC = () => {
     <>
       <CssBaseline />
       <ClickAwayListener onClickAway={handleDrawerClose}>
-        <AppBar position='relative' open={open} className={styles.navbar}>
+        <AppBar position='sticky' open={open} className={styles.navbar}>
           <Toolbar>
             <IconButton
-              color='inherit'
               aria-label='open drawer'
               onClick={handleDrawerOpen}
               edge='start'
-              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+              sx={{ color: '#f8f8f2', mr: 2, ...(open && { display: 'none' }) }}
             >
               <Menu />
             </IconButton>
@@ -133,6 +130,8 @@ export const Navbar: React.FC = () => {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            backgroundColor: '#44475a',
+            color: '#f8f8f2',
           },
         }}
         variant='persistent'
@@ -140,7 +139,7 @@ export const Navbar: React.FC = () => {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose} sx={{ color: '#f8f8f2' }}>
             {theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
           </IconButton>
         </DrawerHeader>
@@ -149,7 +148,9 @@ export const Navbar: React.FC = () => {
           {menuItems.map((item) => (
             <Link key={item.text} href={item.path} passHref>
               <ListItem button>
-                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemIcon sx={{ color: '#f8f8f2' }}>
+                  {item.icon}
+                </ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItem>
             </Link>

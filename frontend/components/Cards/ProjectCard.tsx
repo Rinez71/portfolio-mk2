@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { css, jsx } from '@emotion/react';
+import { css, jsx, CSSObject } from '@emotion/react';
 import React from 'react';
 import Image from 'next/image';
 import {
@@ -11,20 +11,24 @@ import {
   Button,
 } from '@mui/material';
 
-
-const card = css({
+const card:CSSObject = {
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-});
+  backgroundColor: '#44475a',
+};
 
-const cardMedia = css({
+const text = {
+  color: '#f8f8f2',
+};
+
+const cardMedia: CSSObject = {
   paddingTop: '56.25%',
-});
+};
 
-const cardContent = css({
+const cardContent:CSSObject = {
   flexGrow: 1,
-});
+};
 
 interface CardProps {
   image: any;
@@ -48,19 +52,19 @@ const ProjectCard: React.FC<CardProps> = ({
       <Card css={card}>
         <Image css={cardMedia} src={image} alt={alt} layout='responsive' />
         <CardContent css={cardContent}>
-          <Typography gutterBottom variant='h5'>
+          <Typography gutterBottom variant='h5' css={text}>
             {title}
           </Typography>
-          <Typography>{description}</Typography>
+          <Typography css={text}>{description}</Typography>
         </CardContent>
         <CardActions>
           <a href={demoLink} target='_blank' rel='noreferrer'>
-            <Button size='small' color='primary'>
+            <Button size='small' color='secondary' variant='contained'>
               Live Demo
             </Button>
           </a>
           <a href={githubLink} target='_blank' rel='noreferrer'>
-            <Button size='small' color='primary'>
+            <Button size='small' color='secondary'>
               Github
             </Button>
           </a>

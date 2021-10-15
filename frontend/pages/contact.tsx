@@ -2,14 +2,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import { useRef } from 'react';
-import {
-  Container,
-  CssBaseline,
-  Grid,
-  TextField,
-  Paper,
-  Button,
-} from '@mui/material';
+import { Container, CssBaseline, Grid, TextField, Button } from '@mui/material';
 import Head from 'next/head';
 import React from 'react';
 import Header from '../components/Layout/Header';
@@ -89,64 +82,103 @@ const Contact: React.FC = () => {
             direction='row'
           >
             <Grid item md={8}>
-              <Paper sx={{ padding: '2rem' }}>
-                <Formik
-                  initialValues={initialValues}
-                  onSubmit={handleSubmit}
-                  validationSchema={validator}
-                >
-                  {({ values }) => (
-                    <Form>
-                      <Field
-                        name='fullName'
-                        id='fullName'
-                        placeholder='Paul Fernandez'
-                        as={TextField}
-                        label='Full Name'
-                        margin='normal'
-                        fullWidth
-                      />
-                      <Field
-                        name='email'
-                        id='email'
-                        type='email'
-                        placeholder='Email'
-                        as={TextField}
-                        label='Email'
-                        margin='normal'
-                        fullWidth
-                      />
-                      <Field
-                        name='subject'
-                        id='subject'
-                        placeholder='Subject'
-                        as={TextField}
-                        label='Subject'
-                        margin='normal'
-                        fullWidth
-                      />
-                      <Field
-                        name='message'
-                        id='message'
-                        placeholder='Message'
-                        as={TextField}
-                        label='Message'
-                        margin='normal'
-                        multiline
-                        maxRows={6}
-                        fullWidth
-                      />
-                      {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
-                      <ReCAPTCHA
-                        ref={reRef}
-                        size='invisible'
-                        sitekey='6LeJxrocAAAAAFN_MAE9U-wSKSPOsz0v_ND6nhym'
-                      />
-                      <Button type='submit'>Submit</Button>
-                    </Form>
-                  )}
-                </Formik>
-              </Paper>
+              {/* <Paper sx={{ padding: '1rem', backgroundColor: '#f8f8f2' }}> */}
+              <Formik
+                initialValues={initialValues}
+                onSubmit={handleSubmit}
+                validationSchema={validator}
+              >
+                {({ values }) => (
+                  <Form>
+                    <Field
+                      name='fullName'
+                      id='fullName'
+                      placeholder='Paul Fernandez'
+                      as={TextField}
+                      label='Full Name'
+                      margin='normal'
+                      variant='filled'
+                      color='secondary'
+                      InputLabelProps={{
+                        style: { color: '#f8f8f2' },
+                      }}
+                      InputProps={{
+                        style: { color: '#f8f8f2', backgroundColor: '#44475a' },
+                      }}
+                      fullWidth
+                    />
+                    <Field
+                      name='email'
+                      id='email'
+                      type='email'
+                      placeholder='Email'
+                      as={TextField}
+                      label='Email'
+                      margin='normal'
+                      variant='filled'
+                      color='secondary'
+                      InputLabelProps={{
+                        style: { color: '#f8f8f2' },
+                      }}
+                      InputProps={{
+                        style: { color: '#f8f8f2', backgroundColor: '#44475a' },
+                      }}
+                      fullWidth
+                    />
+                    <Field
+                      name='subject'
+                      id='subject'
+                      placeholder='Subject'
+                      as={TextField}
+                      label='Subject'
+                      margin='normal'
+                      variant='filled'
+                      color='secondary'
+                      InputLabelProps={{
+                        style: { color: '#f8f8f2' },
+                      }}
+                      InputProps={{
+                        style: { color: '#f8f8f2', backgroundColor: '#44475a' },
+                      }}
+                      fullWidth
+                    />
+                    <Field
+                      name='message'
+                      id='message'
+                      placeholder='Message'
+                      as={TextField}
+                      label='Message'
+                      margin='normal'
+                      variant='filled'
+                      color='secondary'
+                      InputLabelProps={{
+                        style: { color: '#f8f8f2' },
+                      }}
+                      InputProps={{
+                        style: { color: '#f8f8f2', backgroundColor: '#44475a' },
+                      }}
+                      multiline
+                      maxRows={10}
+                      fullWidth
+                    />
+                    {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
+                    <ReCAPTCHA
+                      ref={reRef}
+                      size='invisible'
+                      sitekey='6LeJxrocAAAAAFN_MAE9U-wSKSPOsz0v_ND6nhym'
+                    />
+                    <Button
+                      variant='contained'
+                      type='submit'
+                      color='secondary'
+                      css={{ marginTop: '1rem', textAlign: 'right' }}
+                    >
+                      Submit
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
+              {/* </Paper> */}
             </Grid>
           </Grid>
         </Container>
