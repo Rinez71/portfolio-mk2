@@ -28,7 +28,7 @@ const initialValues: ContactForm = {
 };
 
 const Contact: React.FC = () => {
-  const reRef = useRef<ReCAPTCHA>();
+  const reRef = useRef<any>();
   const handleSubmit = async (values: any) => {
     const token = await reRef.current?.executeAsync();
     reRef.current.reset();
