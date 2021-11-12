@@ -40,7 +40,7 @@ const description: CSSObject = {
   color: '#f8f8f2',
 };
 
-const icon: CSSObject = {
+export const icon: CSSObject = {
   marginRight: '1rem',
 };
 
@@ -81,7 +81,8 @@ const Home: NextPage = () => {
                       'Typescript',
                       'MySQL',
                       'NodeJS',
-                      'and much more!',
+                      'ExpressJS',
+                      'CSS',
                     ],
                     autoStart: true,
                     loop: true,

@@ -12,7 +12,7 @@ import { Work, School, Star } from '@mui/icons-material';
 const Timeline: React.FC = () => {
   return (
     <>
-      <VerticalTimeline>
+      <VerticalTimeline animate={false}>
         {/*-------------------------------------------RSI------------------------------------------------- */}
         <VerticalTimelineElement
           className='vertical-timeline-element--work'

@@ -10,9 +10,12 @@ import ImageMasonry from '../components/Masonry/ImageMasonry';
 import Header from '../components/Layout/Header';
 
 export const container: CSSObject = {
-  padding: '6rem 0',
+  padding: '7rem 0',
   height: 'auto',
-  marginBottom: '8rem',
+  marginBottom: '10.5rem',
+  '@media(max-width: 598px)': {
+    margin: '0 1rem',
+  }
 };
 
 export const background: CSSObject = {

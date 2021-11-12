@@ -48,7 +48,7 @@ const Projects: NextPage = () => {
           <Grid container spacing={2}>
             {cards.map((card, index) => {
               return (
-                <Grid item key={index} xs={12} sm={6} md={4}>
+                <Grid item key={index} xs={12} sm={6} md={4} sx={{margin: '0 .5rem'}}>
                   <ProjectCard
                     image={card.image}
                     title={card.title}

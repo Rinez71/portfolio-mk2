@@ -26,20 +26,16 @@ const itemData = [
     img: PennyTongue,
     title: 'Millie',
   },
-  {
-    img: MillieBaby,
-    title: 'Millie',
-  },
 ];
 
 const ImageMasonry: React.FC = () => {
   return (
     <>
-      <Box sx={{ width: 500, minHeight: 500 }}>
+      <Box sx={{ minWidth: 300, minHeight: 500 }}>
         <Masonry columns={2} spacing={2}>
           {itemData.map((item, index) => (
             <MasonryItem key={index}>
-              <Image src={item.img} alt={item.title} loading='lazy' />
+              <Image src={item.img} alt={item.title} loading='lazy' layout='responsive' />
             </MasonryItem>
           ))}
         </Masonry>
