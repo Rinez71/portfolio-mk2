@@ -15,6 +15,12 @@ export const container: CSSObject = {
   marginBottom: '10.5rem',
   '@media(max-width: 598px)': {
     margin: '0 1rem',
+  },
+  '@media(min-width: 1681px)': {
+    padding: '8rem 0',
+  },
+  '@media(min-width: 1900px)': {
+    padding: '13rem 0',
   }
 };
 
