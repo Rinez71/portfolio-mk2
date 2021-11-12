@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
     <>
       <CssBaseline />
       <ClickAwayListener onClickAway={handleDrawerClose}>
-        <AppBar position='sticky' open={open} className={styles.navbar}>
+        <AppBar position='relative' open={open} className={styles.navbar}>
           <Toolbar>
             <IconButton
               aria-label='open drawer'
