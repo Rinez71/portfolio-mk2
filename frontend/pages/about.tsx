@@ -10,7 +10,7 @@ import ImageMasonry from '../components/Masonry/ImageMasonry';
 import Header from '../components/Layout/Header';
 
 export const container: CSSObject = {
-  padding: '7rem 0',
+  padding: '8rem 0',
   height: 'auto',
   marginBottom: '10.5rem',
   '@media(max-width: 598px)': {
