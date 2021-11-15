@@ -8,6 +8,7 @@ import { NextPage } from 'next';
 import ProjectCard from '../components/Cards/ProjectCard';
 import Alien from '../public/images/AlienGram.png';
 import Ultuh from '../public/images/ultuh.png';
+import Portfolio from '../public/images/portfolio-mk1.png'
 import Header from '../components/Layout/Header';
 import { background, container } from './about';
 
@@ -31,6 +32,14 @@ const cards = [
     demoLink: 'https://ult-uh.netlify.app/',
     githubLink: 'https://github.com/Rinez71/ult-uh',
   },
+  {
+    image: Portfolio,
+    title: 'Personal Website Project',
+    description: `My personal website project was my original portfolio and the first website I built: HTML5, CSS3, Bootstrap 4, jQuery/JavaScript, UX & UI Design, MailgunJS, and Google reCAPTCHA.`,
+    alt: 'Thumbnail of Ul-tuh',
+    demoLink: 'https://pwp-rinez.vercel.app/',
+    githubLink: 'https://github.com/Rinez71/my-pwp-robert-inez',
+  },
 ];
 
 const Projects: NextPage = () => {
@@ -42,13 +51,13 @@ const Projects: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
-      <Header header='Project' />
+      <Header header='Projects' />
       <main css={background}>
-        <Container css={container} maxWidth='md'>
+        <Container css={container} maxWidth='lg'>
           <Grid container spacing={2}>
             {cards.map((card, index) => {
               return (
-                <Grid item key={index} xs={12} sm={6} md={4} sx={{margin: '0 .5rem'}}>
+                <Grid item key={index} xs={12} md={4}>
                   <ProjectCard
                     image={card.image}
                     title={card.title}
