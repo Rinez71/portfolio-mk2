@@ -1,13 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { css, jsx, CSSObject } from '@emotion/react';
 import React from 'react';
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import { CssBaseline, Grid, Container } from '@mui/material';
 import Header from '../components/Layout/Header';
 import Timeline from '../components/Timeline/Timeline';
-import { container, background } from './about';
+import { background } from './about';
+
+export const container: CSSObject = {
+  margin: '5rem auto',
+  display: 'flex',
+  alignItems: 'center',
+  height: '100vh'
+};
 
 const Experience: NextPage = () => {
   return (
@@ -18,9 +25,8 @@ const Experience: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
-      <Header header='Experience' />
       <main css={background}>
-        <Container css={container}>
+        <Container css={container} maxWidth='xl'>
           <Grid
             container
             justifyContent='center'
@@ -28,6 +34,9 @@ const Experience: NextPage = () => {
             spacing={6}
             direction='row'
           >
+            <Grid item md={12}>
+              <Header header='Experience' />
+            </Grid>
             <Grid item md={12}>
               <Timeline />
             </Grid>
