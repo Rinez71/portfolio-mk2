@@ -71,9 +71,8 @@ const Contact: React.FC = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
-      <Header header='Contact' />
       <main css={background}>
-        <Container css={container}>
+        <Container css={container} maxWidth='xl'>
           <Grid
             container
             justifyContent='center'
@@ -81,6 +80,9 @@ const Contact: React.FC = () => {
             spacing={2}
             direction='row'
           >
+            <Grid item md={12}>
+              <Header header='Contact' />
+            </Grid>
             <Grid item md={8}>
               {/* <Paper sx={{ padding: '1rem', backgroundColor: '#f8f8f2' }}> */}
               <Formik

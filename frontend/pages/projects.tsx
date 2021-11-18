@@ -51,10 +51,12 @@ const Projects: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
-      <Header header='Projects' />
       <main css={background}>
-        <Container css={container} maxWidth='lg'>
+        <Container css={container} maxWidth='xl'>
           <Grid container spacing={2}>
+          <Grid item md={12}>
+            <Header header='Projects' />
+            </Grid>
             {cards.map((card, index) => {
               return (
                 <Grid item key={index} xs={12} md={4}>

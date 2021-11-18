@@ -11,7 +11,7 @@ import {
 
 const container: CSSObject = {
   backgroundColor: '#282a36',
-  padding: '.5rem 0',
+  paddingBottom: '2rem'
 };
 
 const text: CSSObject = {
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
   return (
     <>
       <div css={container}>
-        <Container maxWidth='lg'>
+        <Container disableGutters={true}>
           <Typography css={text} variant='h2' align='center'>
             {header}
           </Typography>

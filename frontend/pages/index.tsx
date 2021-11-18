@@ -32,6 +32,7 @@ const main: CSSObject = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  height: '100vh'
 };
 
 const description: CSSObject = {
