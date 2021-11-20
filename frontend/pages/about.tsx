@@ -10,13 +10,16 @@ import ImageMasonry from '../components/Masonry/ImageMasonry';
 import Header from '../components/Layout/Header';
 
 export const container: CSSObject = {
-  height: '100vh',
-  margin: '2rem auto'
+  padding: '7rem 1rem',
+  height: 'auto',
+  display: 'flex',
+  alignItems: 'center'
 };
 
 export const background: CSSObject = {
   backgroundColor: '#282a36',
   display: 'flex',
+  height: '100vh'
 };
 
 export const text: CSSObject = {
@@ -32,6 +35,7 @@ const About: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
+          <Header header='About' />
       <main css={background}>
         <Container css={container} maxWidth='xl'>
           <Grid
@@ -41,9 +45,6 @@ const About: NextPage = () => {
             spacing={6}
             direction='row'
           >
-            <Grid item md={12}>
-              <Header header='About' />
-            </Grid>
             <Grid item md={6}>
               <Typography variant='h4' css={text}>
                 {/* eslint-disable-next-line react/no-unescaped-entities */}

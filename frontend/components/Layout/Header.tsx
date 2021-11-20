@@ -11,7 +11,7 @@ import {
 
 const container: CSSObject = {
   backgroundColor: '#282a36',
-  paddingBottom: '2rem'
+  padding: '.5rem 0',
 };
 
 const text: CSSObject = {

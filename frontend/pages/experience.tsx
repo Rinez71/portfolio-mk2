@@ -18,6 +18,7 @@ const Experience: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
+          <Header header='Experience' />
       <main css={background}>
         <Container css={container} maxWidth='xl'>
           <Grid
@@ -27,9 +28,6 @@ const Experience: NextPage = () => {
             spacing={6}
             direction='row'
           >
-            <Grid item md={12}>
-              <Header header='Experience' />
-            </Grid>
             <Grid item md={12}>
               <Timeline />
             </Grid>
