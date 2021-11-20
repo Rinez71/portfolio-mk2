@@ -11,8 +11,7 @@ import Header from '../components/Layout/Header';
 
 export const container: CSSObject = {
   height: '100vh',
-  display: 'flex',
-  alignItems: 'center',
+  margin: '2rem auto'
 };
 
 export const background: CSSObject = {

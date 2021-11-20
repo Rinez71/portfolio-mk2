@@ -7,14 +7,7 @@ import type { NextPage } from 'next';
 import { CssBaseline, Grid, Container } from '@mui/material';
 import Header from '../components/Layout/Header';
 import Timeline from '../components/Timeline/Timeline';
-import { background } from './about';
-
-export const container: CSSObject = {
-  margin: '5rem auto',
-  display: 'flex',
-  alignItems: 'center',
-  height: '100vh'
-};
+import { container, background } from './about';
 
 const Experience: NextPage = () => {
   return (

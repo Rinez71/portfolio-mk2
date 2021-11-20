@@ -53,7 +53,13 @@ const Projects: NextPage = () => {
       <CssBaseline />
       <main css={background}>
         <Container css={container} maxWidth='xl'>
-          <Grid container spacing={2}>
+        <Grid
+            container
+            justifyContent='center'
+            alignItems='center'
+            spacing={6}
+            direction='row'
+          >
           <Grid item md={12}>
             <Header header='Projects' />
             </Grid>
