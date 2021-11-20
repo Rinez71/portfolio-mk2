@@ -7,7 +7,7 @@ import type { NextPage } from 'next';
 import { CssBaseline, Grid, Container } from '@mui/material';
 import Header from '../components/Layout/Header';
 import Timeline from '../components/Timeline/Timeline';
-import { container, background } from './about';
+import { background, container } from './about';
 
 const Experience: NextPage = () => {
   return (

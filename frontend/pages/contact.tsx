@@ -1,15 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { css, jsx } from '@emotion/react';
+import { css, jsx, CSSObject } from '@emotion/react';
 import { useRef } from 'react';
 import { Container, CssBaseline, Grid, TextField, Button } from '@mui/material';
 import Head from 'next/head';
 import React from 'react';
 import Header from '../components/Layout/Header';
-import { background, container } from './about';
+import { background } from './about';
 import * as Yup from 'yup';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Formik, Form, Field } from 'formik';
+
+const container: CSSObject = {
+  height: '100vh',
+  padding: '8rem 1rem',
+};
 
 interface ContactForm {
   fullName: string;

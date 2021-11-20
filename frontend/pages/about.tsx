@@ -10,16 +10,13 @@ import ImageMasonry from '../components/Masonry/ImageMasonry';
 import Header from '../components/Layout/Header';
 
 export const container: CSSObject = {
-  padding: '7rem 1rem',
   height: 'auto',
-  display: 'flex',
-  alignItems: 'center'
+  padding: '8rem 1rem',
 };
 
 export const background: CSSObject = {
   backgroundColor: '#282a36',
   display: 'flex',
-  height: '100vh'
 };
 
 export const text: CSSObject = {
@@ -37,7 +34,7 @@ const About: NextPage = () => {
       <CssBaseline />
           <Header header='About' />
       <main css={background}>
-        <Container css={container} maxWidth='xl'>
+        <Container css={container} maxWidth='xl' disableGutters={true}>
           <Grid
             container
             justifyContent='center'
