@@ -49,7 +49,7 @@ export default async (
     html: message.replace(/\r\n/g, '<br>'),
   };
 
-  sgMail.send(data);
+  await sgMail.send(data);
 
   res.status(200).json({ status: 'Ok' });
 };
