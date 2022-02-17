@@ -8,7 +8,7 @@ import { NextPage } from 'next';
 import ProjectCard from '../components/Cards/ProjectCard';
 import Alien from '../public/images/AlienGram.png';
 import Ultuh from '../public/images/ultuh.png';
-import Portfolio from '../public/images/portfolio-mk1.png'
+import Portfolio from '../public/images/portfolio-mk1.png';
 import Header from '../components/Layout/Header';
 import { background, container } from './about';
 
@@ -51,11 +51,11 @@ const Projects: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
-      <main css={background}>
+      <main>
         <Container css={container} maxWidth='xl'>
           <Grid container spacing={2}>
-          <Grid item md={12}>
-            <Header header='Projects' />
+            <Grid item md={12}>
+              <Header header='Projects' />
             </Grid>
             {cards.map((card, index) => {
               return (

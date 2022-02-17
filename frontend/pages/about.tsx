@@ -33,8 +33,8 @@ const About: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <CssBaseline />
-      <main css={background}>
-        <Container css={container} maxWidth='xl'>
+      <main>
+        {/* <Container css={container} maxWidth='xl'> */}
           <Grid
             container
             justifyContent='center'
@@ -84,7 +84,7 @@ const About: NextPage = () => {
               <ImageMasonry />
             </Grid>
           </Grid>
-        </Container>
+        {/* </Container> */}
       </main>
     </>
   );
